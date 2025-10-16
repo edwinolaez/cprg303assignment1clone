@@ -1,5 +1,6 @@
 import React from 'react';
 import { Alert, Button, Image, Platform, StatusBar, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import YoutubeLogo from './Icons/youtubeLogo';
 
 const HomePage = () => {
   const showAlert = () => {
@@ -8,14 +9,15 @@ const HomePage = () => {
 
   return (
     <View style={styles.container}>
-      <View style={styles.header}>
-        <Text style={styles.time}>9:41</Text>
+        <View style={styles.header}>
+          {/* <Text style={styles.time}>9:41</Text>
         <View style={styles.icons}>
           <Text>📶🔋 </Text>
-        </View>
-        <View style={styles.logoPlaceholder}>
+        </View> */}
+        {/* <View style={styles.logoPlaceholder}>
           <Text style={styles.logoText}>YouTube</Text>
-        </View>
+        </View> */}
+        <YoutubeLogo/>
         <View style={styles.tabs}>
           <Text>All</Text>
           <Text>Mixes</Text>
