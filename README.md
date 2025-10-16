@@ -4,7 +4,7 @@ This is an [Expo](https://expo.dev) project created with [`create-expo-app`](htt
 
 ## If can't open project when you clone it from github
 
-run in terminal (remember to change directory to the project it self)
+run in terminal (remember to change directory to the project it self(cd ....))
 npm install -g expo-cli
 npm install
 

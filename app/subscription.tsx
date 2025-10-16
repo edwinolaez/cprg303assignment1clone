@@ -1,18 +1,10 @@
-import { Stack } from "expo-router";
-
-
+import SubscriptionPage from "@/components/subscription-page";
+import React from "react";
 
 
 export default function Subscription() {
   return (
-    <div>
-      {/* ✅ Adds navigation header and back button automatically */}
-      <Stack.Screen
-        options={{
-          title: "Subscription",
-          headerShown: true,
-        }}
-      />
-      </div>
+      <SubscriptionPage />
+      
   );
 }
