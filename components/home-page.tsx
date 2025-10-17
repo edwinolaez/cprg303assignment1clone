@@ -1,5 +1,7 @@
 import React from 'react';
 import { Alert, Button, Image, Platform, StatusBar, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import BellIcon from './Icons/bellIcon';
+import SearchIcon from './Icons/searchIcon';
 import YoutubeLogo from './Icons/youtubeLogo';
 
 const HomePage = () => {
@@ -17,14 +19,22 @@ const HomePage = () => {
         {/* <View style={styles.logoPlaceholder}>
           <Text style={styles.logoText}>YouTube</Text>
         </View> */}
-        <YoutubeLogo/>
         <View style={styles.tabs}>
-          <Text>All</Text>
-          <Text>Mixes</Text>
-          <Text>Music</Text>
-      
-          <Text>🔍</Text>
+          <View style={styles.leftSection}><YoutubeLogo/></View>
+          <View style={styles.rightSection}>
+            <View style={styles.Icon}><Image style={styles.castIconStyle} source={require('../assets/images/CastIcon.png')} /></View>
+          <View style={styles.Icon}><BellIcon/></View>
+          <View style={styles.Icon}><SearchIcon/></View>
+          </View>
         </View>
+      </View>
+
+      <View style={styles.filterRow}>
+        {['All', 'Mixes', 'Music', 'Federal Bureau of'].map((text, index) => (
+          <View key={index} style={styles.filterButton}>
+            <Text style={[styles.filterText, index === 0 && {color:'white', backgroundColor:'black'}]}>{text}</Text>
+          </View>
+        ))}
       </View>
 
       <View style={styles.adSection}>
@@ -80,7 +90,7 @@ const styles = StyleSheet.create({
   icons: {flexDirection: 'row'},
   logoPlaceholder: {width: 40, height: 40, backgroundColor:'#FF0000',justifyContent: 'center',  alignItems: 'center', marginRight: 10},
   logoText: {color: '#FFF', fontWeight: 'bold', fontSize: 12},
-  tabs: {flexDirection: 'row', justifyContent: 'space-around', flex: 1},
+  tabs: {flexDirection: 'row', justifyContent: 'space-between', flex: 1},
   adSection: {padding: 10, alignItems: 'center'},
   thumbnail: {width: '100%', height: 200},
   adText: {fontSize: 16, textAlign: 'center'},
@@ -93,4 +103,11 @@ const styles = StyleSheet.create({
   bottomNav: {flexDirection: 'row', justifyContent: 'space-around', padding: 10, borderTopWidth: 1, borderTopColor: '#CCC',position: 'absolute', bottom: 50, width: '100%'},
   alertButton: {alignItems: 'center', marginVertical:10, backgroundColor: '#FF0000', padding: 10},
   alertButtonText: {color: '#FFF',fontSize: 16, fontWeight: 'bold'},
+  leftSection: {height: 30,width:30,resizeMode:'contain',marginHorizontal:2,marginTop:3,flexDirection:'row',alignItems:'center'},
+  rightSection: {flexDirection:'row',alignItems:'center'},
+  Icon: {marginHorizontal: 5, height: 25, width: 25, resizeMode: 'contain', marginTop: 2},
+  castIconStyle: {width: 20, height: 20, resizeMode: 'contain'},
+  filterRow:{flexDirection:'row',paddingVertical: 10, paddingHorizontal:10},
+  filterButton:{marginRight:10},
+  filterText:{fontSize:14, paddingVertical:6, paddingHorizontal:14, borderRadius: 10, backgroundColor:'#f2f2f2',fontWeight:'bold'},
 });
