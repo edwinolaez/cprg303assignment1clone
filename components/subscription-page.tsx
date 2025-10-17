@@ -1,5 +1,5 @@
 import React from 'react';
-import { FlatList, Image, Platform, ScrollView, StatusBar, StyleSheet, Text, View } from 'react-native';
+import { FlatList, Image, Platform, ScrollView, StyleSheet, Text, View } from 'react-native';
 import BellIcon from './Icons/bellIcon';
 import DotsIcon from './Icons/dots';
 import HomeIcon from './Icons/homeIcon';
@@ -18,7 +18,7 @@ export default function subscriptionPage() {
   container: {
       flex: 1,
       backgroundColor: '#FFF',
-      paddingTop: Platform.select({ ios: 0, android: StatusBar.currentHeight || 0 }),
+      paddingTop: Platform.select({ ios: 0, android: 0 }),
     },
   ProfileIcon: {
     borderRadius: 20,
@@ -46,11 +46,14 @@ export default function subscriptionPage() {
       width: 30,
       resizeMode: 'contain',
       marginHorizontal: 5,
+      marginTop: 5
     },
     leftSection:{ 
       height: 30,
       width: 30,
       resizeMode: 'contain',
+      marginHorizontal: 2,
+      marginTop: 3,
      
       flexDirection: "row",
       alignItems: "center",
@@ -79,6 +82,7 @@ export default function subscriptionPage() {
       height: 50,
       width: 40,
       resizeMode: 'contain',
+      borderRadius:100, 
     },
     video:{
       height: 200,
@@ -250,9 +254,6 @@ export default function subscriptionPage() {
     
   ];
 
-  let reversedVideos = videos.reverse();
-
-
     
     return (
     // Top Nav
@@ -330,15 +331,15 @@ export default function subscriptionPage() {
 
                   <View style={styles.videoInfo}>
                     <View style={styles.textContainer}>
-                      <div style={styles.dotsStyle}>
+                      <View style={styles.dotsStyle}>
                         <Text style={styles.titleHorizontal} numberOfLines={2}>
                           {item.title}
                         </Text>
-                        <div style={{marginLeft: 10, width: 10}}>
+                        <View style={{marginLeft: 10, width: 10, marginTop: 3}}>
                           <DotsIcon />
-                        </div>
+                        </View>
                         
-                      </div>
+                      </View>
                       
                       <Text style={styles.subtitle}>
                         {item.channel}
@@ -365,15 +366,15 @@ export default function subscriptionPage() {
                   <View style={styles.videoInfo}>
                     <Image source={item.profile} style={styles.channelIcon} />
                     <View style={styles.textContainer}>
-                      <div style={styles.dotsStyle}>
+                      <View style={styles.dotsStyle}>
                         <Text style={styles.title} numberOfLines={2}>
                           {item.title}
                         </Text>
-                        <div style={{marginLeft: 10}}>
+                        <View style={{marginLeft: 10, marginTop: 5}}>
                           <DotsIcon />
-                        </div>
+                        </View>
                         
-                      </div>
+                      </View>
                       
                       <Text style={styles.subtitle}>
                         {item.channel} • {item.views} • {item.time}
@@ -400,9 +401,9 @@ export default function subscriptionPage() {
 
               {/* Add (+) */}
               <View style={styles.tab}>
-                  <div ><Image style={styles.plusIcon}
+                  <View ><Image style={styles.plusIcon}
                     source={require("../assets/images/PlusIcon.png")}
-                  /></div>   
+                  /></View>   
               </View>
 
               {/* Subscriptions */}
