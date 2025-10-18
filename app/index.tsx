@@ -13,6 +13,12 @@ export default function Index() {
             Go to Subscription Page
           </Text>
       </Link>
+      <Link href="/profile">
+
+        <Text style={{ color: "red", fontSize: 16, fontWeight: "600" }}>
+            Go to Profile Page
+          </Text>
+      </Link>
     </View>
   );
 }
