@@ -1,13 +1,16 @@
 import React from 'react';
-import { Alert, Button, Image, Platform, StatusBar, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { Button, Image, Platform, StatusBar, StyleSheet, Text, View } from 'react-native';
 import BellIcon from './Icons/bellIcon';
+import HomeIcon from './Icons/homeIcon';
 import SearchIcon from './Icons/searchIcon';
+import ShortsIcon from './Icons/shortsIcon';
+import SubscriptionsIcon from './Icons/subscriptionsIcon';
 import YoutubeLogo from './Icons/youtubeLogo';
 
 const HomePage = () => {
-  const showAlert = () => {
-    Alert.alert('Alert', 'Alert button pressed!'  );
-  };
+//  const showAlert = () => {
+//     Alert .alert('Alert', 'Alert button pressed!'  );
+//   };
 
   return (
     <View style={styles.container}>
@@ -56,21 +59,39 @@ const HomePage = () => {
       </View>
 
       <View style={styles.bottomNav}>
-        <Text>🏠</Text>
-        <Text>Shorts</Text>
-        <Text>➕</Text>
-        <Text>Subscriptions</Text>
-        <Text>You</Text>
+       <View style={styles.tab}>
+          <HomeIcon/>
+          <Text style={styles.label}>Home</Text>
       </View>
 
-      <TouchableOpacity style={styles.alertButton} onPress={showAlert}>
+      <View style={styles.tab}>
+          <ShortsIcon/>
+          <Text style={styles.label}>Shorts</Text>
+      </View>
+
+      <View style={styles.tab}>
+          <View><Image style={styles.plusIcon} source={require('../assets/images/PlusIcon.png')} /> </View>
+      </View>
+
+      <View style={styles.tab}>
+          <SubscriptionsIcon selected={true}/>
+          <Text style={styles.label}>Subscriptions</Text>
+      </View>
+
+      <View style={styles.tab}>
+          <Image source={require("../assets/images/MyProfile.png")}
+            style={styles.ProfileIcon} />
+          <Text style={styles.label}>You</Text>
+      </View>
+
+      {/* <TouchableOpacity style={styles.alertButton} onPress={showAlert}>
         <Text style={styles.alertButtonText}>Show Alert</Text>
-      </TouchableOpacity>
+      </TouchableOpacity> */}
+    </View> 
     </View>
   );
-};
-
-export default HomePage
+}
+export default HomePage;
 
 const styles = StyleSheet.create({
   container: {
@@ -110,4 +131,8 @@ const styles = StyleSheet.create({
   filterRow:{flexDirection:'row',paddingVertical: 10, paddingHorizontal:10},
   filterButton:{marginRight:10},
   filterText:{fontSize:14, paddingVertical:6, paddingHorizontal:14, borderRadius: 10, backgroundColor:'#f2f2f2',fontWeight:'bold'},
+  tab:{alignItems:'center', marginTop: 8, marginBottom: 8},
+  plusIcon:{width:40, height:50, resizeMode:'contain',borderRadius:100},
+  label:{fontSize:12, marginTop:2,color:"black"},
+  ProfileIcon:{width:30, height:30, resizeMode:'contain', borderRadius:20},
 });
