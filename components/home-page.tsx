@@ -50,9 +50,11 @@ const HomePage = () => {
         </View>
 
         <View style={styles.newsSection}>
-          <Image source={require('../assets/images/newsbroadcast.jpg')} style={styles.newsThumbnail} />
-          <Image source={require('../assets/images/newslogo.jpg')} style={styles.logoSmall} />
-          <Text style={styles.newsTitle}>New reporting CONFIRMS accidentally posted DM to Randi or ...</Text>
+          <Image source={require('../assets/images/homeclone.jpg')} style={styles.newsThumbnail} />
+          <View>
+          <Image source={require('../assets/images/msnbc.jpg')} style={styles.logoSmall} />
+          </View>
+          <Text style={styles.newsTitle}>New reporting CONFIRMS Trump accidentally posted DM to Bondi or ...</Text>
           <Text>8:07</Text>
         </View>
       </ScrollView>
@@ -96,6 +98,11 @@ const HomePage = () => {
   );
 }
 export default HomePage;
+
+const logo = [
+  {id: 1, source: require('../assets/images/msnbc.jpg')},
+  {id: 2, source: require('../assets/images/disney.jpg')},
+];
 
 const styles = StyleSheet.create({
   container: {
