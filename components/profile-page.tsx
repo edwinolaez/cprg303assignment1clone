@@ -17,8 +17,6 @@ export default function ProfilePage() {
     container: {
       flex:1,
       backgroundColor: '#0f0f0f', 
-      //adding space at top, but different for ios and android.... for ios it is 0 as phones handles it automatically so no extra space is needed...
-      //if StatusBar.currentHeight doen't exist then use 0 instead.. just to be safe
       paddingTop: 0,
 
     },
