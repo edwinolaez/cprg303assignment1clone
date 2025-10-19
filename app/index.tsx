@@ -16,7 +16,7 @@ export default function Index() {
       <Link href="/profile">
 
         <Text style={{ color: "red", fontSize: 16, fontWeight: "600" }}>
-            Go to Profile Page
+            Go to the Profile Page
           </Text>
       </Link>
     </View>
