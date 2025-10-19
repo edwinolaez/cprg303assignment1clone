@@ -644,10 +644,12 @@ export default function ProfilePage() {
         <View style={styles.bottomNav}>
             
             
+            <Link href="/" asChild>
             <TouchableOpacity style={styles.navItem}>
               <MaterialIcons name="home-filled" size={26} color="#ffffff"/>
               <Text style={styles.navTextActive}>Home</Text>
             </TouchableOpacity>
+            </Link>
             
 
             <TouchableOpacity style={styles.navItem}>
@@ -662,12 +664,14 @@ export default function ProfilePage() {
               </View>
 
             </TouchableOpacity>
+
+            <Link href="/subscription" asChild >
             
             <TouchableOpacity style={styles.navItem}>
                 <MaterialIcons name="subscriptions" size={26} color="#ffffff"/>
                 <Text style={styles.navText}>Subscriptions</Text>
             </TouchableOpacity>   
-            
+            </Link>
 
             <TouchableOpacity style={styles.navItem}>
               <Image source={require('../assets/images/OIP.jpeg')} style={styles.navProfilePic}/>
