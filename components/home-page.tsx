@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Image, Platform, StatusBar, StyleSheet, Text, View } from 'react-native';
+import { Button, Image, Platform, StatusBar, StyleSheet, Text, View, Alert, TouchableOpacity } from 'react-native';
 import BellIcon from './Icons/bellIcon';
 import HomeIcon from './Icons/homeIcon';
 import SearchIcon from './Icons/searchIcon';
@@ -8,9 +8,8 @@ import SubscriptionsIcon from './Icons/subscriptionsIcon';
 import YoutubeLogo from './Icons/youtubeLogo';
 
 const HomePage = () => {
-//  const showAlert = () => {
-//     Alert .alert('Alert', 'Alert button pressed!'  );
-//   };
+ const showAlert = () => {
+    Alert.alert('Alert', 'Alert button pressed!');}
 
   return (
     <View style={styles.container}>
@@ -84,9 +83,9 @@ const HomePage = () => {
           <Text style={styles.label}>You</Text>
       </View>
 
-      {/* <TouchableOpacity style={styles.alertButton} onPress={showAlert}>
+      <TouchableOpacity style={styles.alertButton} onPress={showAlert}>
         <Text style={styles.alertButtonText}>Show Alert</Text>
-      </TouchableOpacity> */}
+      </TouchableOpacity>
     </View> 
     </View>
   );
