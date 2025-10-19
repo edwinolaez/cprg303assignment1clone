@@ -1,9 +1,9 @@
+import { FontAwesome5, Ionicons, MaterialIcons } from '@expo/vector-icons';
 import React from 'react';
-import {View, Text, Image, StyleSheet, StatusBar, Platform, ScrollView, TouchableOpacity} from 'react-native';
-import {MaterialIcons} from '@expo/vector-icons';
-import { FontAwesome5 } from '@expo/vector-icons';
-import { Ionicons } from '@expo/vector-icons';
-import { useWindowDimensions } from 'react-native';
+import { Image, ScrollView, StatusBar, StyleSheet, Text, TouchableOpacity, useWindowDimensions, View } from 'react-native';
+
+
+
 import { Link } from 'expo-router';
 
 
@@ -642,12 +642,13 @@ export default function ProfilePage() {
         
         {/*Bottom navigation bar */}
         <View style={styles.bottomNav}>
-
+            
+            
             <TouchableOpacity style={styles.navItem}>
               <MaterialIcons name="home-filled" size={26} color="#ffffff"/>
               <Text style={styles.navTextActive}>Home</Text>
-
             </TouchableOpacity>
+            
 
             <TouchableOpacity style={styles.navItem}>
               <MaterialIcons name="play-circle-outline" size={26} color="#ffffff"/>
@@ -661,12 +662,12 @@ export default function ProfilePage() {
               </View>
 
             </TouchableOpacity>
-
+            
             <TouchableOpacity style={styles.navItem}>
-              <MaterialIcons name="subscriptions" size={26} color="#ffffff"/>
-              <Text style={styles.navText}>Subscriptions</Text>
-
-            </TouchableOpacity>
+                <MaterialIcons name="subscriptions" size={26} color="#ffffff"/>
+                <Text style={styles.navText}>Subscriptions</Text>
+            </TouchableOpacity>   
+            
 
             <TouchableOpacity style={styles.navItem}>
               <Image source={require('../assets/images/OIP.jpeg')} style={styles.navProfilePic}/>

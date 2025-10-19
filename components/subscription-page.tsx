@@ -1,3 +1,4 @@
+import { Link } from "expo-router";
 import React from 'react';
 import { FlatList, Image, Platform, ScrollView, StyleSheet, Text, View } from 'react-native';
 import BellIcon from './Icons/bellIcon';
@@ -7,8 +8,6 @@ import SearchIcon from './Icons/searchIcon';
 import ShortsIcon from './Icons/shortsIcon';
 import SubscriptionsIcon from './Icons/subscriptionsIcon';
 import YoutubeLogo from './Icons/youtubeLogo';
-
-
 
 
 export default function subscriptionPage() {
@@ -40,7 +39,12 @@ export default function subscriptionPage() {
     borderBottomWidth: 1,
     borderBottomColor: '#ddd',
   },
-    tabs: { flexDirection: 'row', justifyContent: 'space-between', flex: 1},
+    tabs: { 
+      flexDirection: 'row', 
+      justifyContent: 'space-between', 
+      flex: 1,
+
+    },
     Icon:{
       height: 30,
       width: 30,
@@ -64,7 +68,8 @@ export default function subscriptionPage() {
     },
     bottomNav: {
       flexDirection: 'row',
-      justifyContent: 'space-around',
+      justifyContent: 'space-between',
+      paddingVertical: 8,
       borderTopWidth: 1,
       borderTopColor: '#ddd',
     },
@@ -73,10 +78,17 @@ export default function subscriptionPage() {
       marginTop: 2,
       color: "black",
     },
+    subLabel: {
+      fontSize: 12,
+      marginTop: 5,
+      color: "black",
+    },
     tab: {
       alignItems: "center",
       marginTop: 8,
-      marginBottom: 8
+      marginBottom: 8,
+      flex: 1,      
+      
     },
     plusIcon: {
       height: 50,
@@ -203,7 +215,11 @@ export default function subscriptionPage() {
       bottom: 0,       
       width: 40,       
       backgroundColor: 'white', 
+    },
+    mainTab: {
+      top: 5,
     }
+    
 
 
 
@@ -389,14 +405,17 @@ export default function subscriptionPage() {
             <View style={styles.bottomNav}>
               {/* Home */}
               <View style={styles.tab}>
-                <HomeIcon />
-                <Text style={styles.label}>Home</Text>
+                <Link href="/" >
+                  <HomeIcon />
+                </Link>
+                  <Text style={styles.label}>Home</Text>
+                
               </View>
 
               {/* Shorts */}
               <View style={styles.tab}>
                 <ShortsIcon />
-                <Text style={styles.label}>Shorts</Text>
+                <Text style={styles.subLabel}>Shorts</Text>
               </View>
 
               {/* Add (+) */}
@@ -407,22 +426,28 @@ export default function subscriptionPage() {
               </View>
 
               {/* Subscriptions */}
+              
               <View style={styles.tab}>
-                <SubscriptionsIcon selected={true} />
-                <Text style={styles.label}>Subscriptions</Text>
+            
+                  <SubscriptionsIcon selected={true}  />
+                  <Text style={styles.subLabel}>Subscriptions</Text>
+                
               </View>
 
               {/* You / Profile */}
               <View style={styles.tab}>
-                <Image
-                  source={require("../assets/images/MyProfile.png")}
-                  style={styles.ProfileIcon}
-                />
-                <Text style={styles.label}>You</Text>
+                <Link href="/profile" >
+                  <Image
+                    source={require("../assets/images/MyProfile.png")}
+                    style={styles.ProfileIcon}
+                  />
+                </Link>
+                  <Text style={styles.label}>You</Text>
+                
               </View>
             </View>
 
-  </View>
+    </View>
     
   );
   
