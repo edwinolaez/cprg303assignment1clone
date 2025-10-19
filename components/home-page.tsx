@@ -16,13 +16,6 @@ const HomePage = () => {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-          {/* <Text style={styles.time}>9:41</Text>
-        <View style={styles.icons}>
-          <Text>📶🔋 </Text>
-        </View> */}
-        {/* <View style={styles.logoPlaceholder}>
-          <Text style={styles.logoText}>YouTube</Text>
-        </View> */}
         <View style={styles.tabs}>
           <View style={styles.leftSection}><YoutubeLogo/></View>
           <View style={styles.rightSection}>
@@ -37,44 +30,38 @@ const HomePage = () => {
       </TouchableOpacity>
 
       <ScrollView >
-      <View style={styles.filterRow}>
-              {['All', 'Mixes', 'Music', 'Federal Bureau of'].map((text, index) => (
-                <View key={index} style={styles.filterButton}>
-                  <Text style={[styles.filterText, index === 0 && {color:'white', backgroundColor:'black'}]}>{text}</Text>
-                </View>
-              ))}
-            </View>
-
-            <View style={styles.adSection}>
-              <Image source={require('../assets/images/disney.jpg')} style={styles.thumbnail} />
-              <Text style={styles.adText}>Enjoy the Spirit of the Holidays at the Disneyland Resort with a Canada R...</Text>
-              <Text style={styles.sponsored}>Sponsored. DisneyLand Resort</Text>
-              <Text>Oct 5-Oct 17</Text>
-              <View style={styles.buttons}>
-
-                
-                {/* <Button title="Watch" onPress={() => {}} color="#000" />
-                <Button title="Learn More" onPress={() => {}} color= "#000" /> */}
-                <Text style={styles.button1}>Watch</Text>
-                <Text style={styles.button2}>Learn More</Text>
+            <View style={styles.filterRow}>
+            {['All', 'Mixes', 'Music', 'Federal Bureau of'].map((text, index) => (
+              <View key={index} style={styles.filterButton}>
+                <Text style={[styles.filterText, index === 0 && {color:'white', backgroundColor:'black'}]}>{text}</Text>
               </View>
+            ))}
             </View>
+        <View style={styles.adSection}>
+          <Image source={require('../assets/images/disney.jpg')} style={styles.thumbnail} />
+          <Text style={styles.adText}>Enjoy the Spirit of the Holidays at the Disneyland Resort with a Canada R...</Text>
+          <Text style={styles.sponsored}>Sponsored. DisneyLand Resort</Text>
+          <Text>Oct 5-Oct 17</Text>
+          <View style={styles.buttons}>
 
-            <View style={styles.newsSection}>
-              <Image source={require('../assets/images/newsbroadcast.jpg')} style={styles.newsThumbnail} />
-              <Image source={require('../assets/images/newslogo.jpg')} style={styles.logoSmall} />
-              <Text style={styles.newsTitle}>New reporting CONFIRMS accidentally posted DM to Randi or ...</Text>
-              <Text>8:07</Text>
-            </View>
+            <Text style={styles.button1}>Watch</Text>
+            <Text style={styles.button2}>Learn More</Text>
+          </View>
+        </View>
 
-
+        <View style={styles.newsSection}>
+          <Image source={require('../assets/images/newsbroadcast.jpg')} style={styles.newsThumbnail} />
+          <Image source={require('../assets/images/newslogo.jpg')} style={styles.logoSmall} />
+          <Text style={styles.newsTitle}>New reporting CONFIRMS accidentally posted DM to Randi or ...</Text>
+          <Text>8:07</Text>
+        </View>
       </ScrollView>
       
       <View style={styles.bottomNav}>
-       <View style={styles.tab}>
+        <View style={styles.tab}>
           <HomeIcon selected={true}/>
           <Text style={styles.label}>Home</Text>
-      </View>
+        </View>
 
       <View style={styles.tab}>
           <ShortsIcon/>
@@ -82,11 +69,12 @@ const HomePage = () => {
       </View>
 
       <View style={styles.tab}>
-          <View><Image style={styles.plusIcon} source={require('../assets/images/PlusIcon.png')} /> </View>
+          <View>
+            <Image style={styles.plusIcon} source={require('../assets/images/PlusIcon.png')} />
+          </View>
       </View>
 
       <Link href="/subscription" style={styles.mainTab}>
-      
           <View style={styles.tab}>
           <SubscriptionsIcon />
           <Text style={styles.label}>Subscriptions</Text>
