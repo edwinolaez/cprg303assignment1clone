@@ -19,17 +19,17 @@ export default function ProfilePage() {
       backgroundColor: '#0f0f0f', 
       //adding space at top, but different for ios and android.... for ios it is 0 as phones handles it automatically so no extra space is needed...
       //if StatusBar.currentHeight doen't exist then use 0 instead.. just to be safe
-      paddingTop: Platform.select({ ios: 0, android: StatusBar.currentHeight || 0 }),
+      paddingTop: 0,
 
     },
     content:{
       flex: 1
     },
     profileSection: {
-      padding: 18,
-      // paddingHorizontal: 18,
-      // paddingBottom: 6,
-      // paddingTop: 12
+      //padding: 18,
+       paddingHorizontal: 18,
+       paddingBottom: 18,
+       paddingTop: 1
     },
     // profileRow: {
     //   flexDirection: 'row',
@@ -286,9 +286,9 @@ export default function ProfilePage() {
       marginBottom: 2
     },
     topNav: {
-      paddingTop: Platform.OS === "android" ? (StatusBar.currentHeight || 4 ) : 36,
+      paddingTop: 10,
       paddingHorizontal: 10,
-      paddingBottom: 16,
+      paddingBottom: 10,
       backgroundColor: "#0f0f0f",
       height: 60,
       justifyContent: "center",
@@ -312,14 +312,10 @@ export default function ProfilePage() {
         <StatusBar barStyle='light-content' backgroundColor="#0f0f0f"/>
 
           {/*Left: Back arrow */}
-          <Link href="/" >
-      
-    </Link>
+          <Link href="/" ></Link>
         {/*Top Navbar */}
         
-          <View style={styles.topNav}>
-
-          
+          <View style={styles.topNav}>          
             
             <View style={styles.iconRow}>
               <TouchableOpacity>
